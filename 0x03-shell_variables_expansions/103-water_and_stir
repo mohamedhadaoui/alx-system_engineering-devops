@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "obase=bestchol; $(echo "$WATER + $STIR" | bc)" | bc
+echo "$(( $(tr 'water' '01234' <<< "$WATER") + $(tr 'stir' '56789' <<< "$STIR") ))" | tr '0123456789ABC' 'oltsnem' | rev
